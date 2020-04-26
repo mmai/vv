@@ -1,9 +1,7 @@
 " --------------------------------------------------
 " -----------------  General config ----------------
 " --------------------------------------------------
-" Enable mouse for scrolling and window resizing.
-set mouse=a
-
+set mouse=a " Enable mouse for scrolling and window resizing.
 set number
 
 " Always focus on splited window.
