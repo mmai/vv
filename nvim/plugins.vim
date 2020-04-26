@@ -13,6 +13,9 @@ Plug 'kristijanhusak/defx-git' " top10 - git status for defx
 " --- lf
 Plug 'rbgrouleff/bclose.vim' " needed by ptzz/lf.vim
 Plug 'ptzz/lf.vim' " lf file navigator integration :: launch with <leader>f
+" -- maybe ?
+"  https://github.com/miyakogi/sidepanel.vim " unify sidebars (mundo, defx,
+"  tagbar..)
 
 
 " Tmux

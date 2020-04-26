@@ -4,6 +4,9 @@
 set mouse=a " Enable mouse for scrolling and window resizing.
 set number
 
+" Sync the last copy register with the system clipboard 
+set clipboard^=unnamed,unnamedplus
+
 " Always focus on splited window.
 set splitright
 set splitbelow
