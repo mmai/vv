@@ -23,6 +23,29 @@ Plug 'christoomey/vim-tmux-navigator' " top10 - Allow pane movement to jump out 
 
 " Coding
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " top10 - Intellisense engine, full LSP support as VSCode
+Plug 'honza/vim-snippets' " snippets for many languages, used by coc-snippets extension
+
+" Enabled coc extensions (see :CocList extensions) -> no need to install vim plugins with same functionalities
+" coc-marketplace
+" coc-explorer -> defx 
+" coc-actions
+" coc-pairs
+" coc-highlight
+" coc-git
+" 
+" coc-snippets
+" coc-tabnine coc-yank
+" coc-prettier
+" 
+" coc-html coc-emmet
+" coc-css coc-stylelint
+" coc-tsserver coc-eslint coc-json
+" coc-vetur
+" 
+" coc-yaml
+" coc-phpls
+" coc-python
+" coc-rust-analyser
 
 call plug#end() " Initialize plugin system
 
