@@ -23,7 +23,12 @@ nnoremap ù :ChooseWin<CR>
 " ------ UI ------------
 " Open sidebar file browser
 "nnoremap <leader>e :CocCommand explorer<CR> 
-nnoremap <leader>e :Defx<CR>
+if exists('g:loaded_defx')
+  nnoremap <leader>e :Defx<CR>
+else
+  nnoremap <leader>e :NERDTreeToggle<CR>
+endif
+
 " browse tags 
 nnoremap <leader>t :Vista coc<CR>
 " browse current file directory

@@ -4,3 +4,5 @@ TabNine
 cache
 chromium
 configstore
+nvim/autoload
+nvim/plugged

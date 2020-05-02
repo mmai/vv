@@ -1,5 +1,6 @@
-" --- plugin defx-git
-let g:defx_git#indicators = {
+if exists('g:loaded_defx')
+  " --- plugin defx-git
+  let g:defx_git#indicators = {
 			\ 'Modified'  : '•',
 			\ 'Staged'    : '✚',
 			\ 'Untracked' : 'ᵁ',
@@ -11,15 +12,15 @@ let g:defx_git#indicators = {
 			\ }
 
 
-" --- plugin defx-icons
-let g:defx_icons_column_length = 1
-let g:defx_icons_mark_icon = ''
+  " --- plugin defx-icons
+  let g:defx_icons_column_length = 1
+  let g:defx_icons_mark_icon = ''
 
-" --- plugin defx
-" :h defx
-" Problems? https://github.com/Shougo/defx.nvim/issues
+  " --- plugin defx
+  " :h defx
+  " Problems? https://github.com/Shougo/defx.nvim/issues
 
-call defx#custom#option('_', {
+  call defx#custom#option('_', {
 	\ 'resume': 1,
 	\ 'winwidth': 30,
 	\ 'split': 'vertical',
@@ -29,7 +30,7 @@ call defx#custom#option('_', {
 	\ 'root_marker': ' ',
 	\ })
 
-call defx#custom#column('git', {
+  call defx#custom#column('git', {
 	\   'indicators': {
 	\     'Modified'  : '•',
 	\     'Staged'    : '✚',
@@ -43,16 +44,16 @@ call defx#custom#column('git', {
 	\ })
 
 
-call defx#custom#column('mark', { 'readonly_icon': '', 'selected_icon': '' })
+  call defx#custom#column('mark', { 'readonly_icon': '', 'selected_icon': '' })
 
 
-" Internal use
-let s:original_width = get(get(defx#custom#_get().option, '_'), 'winwidth')
+  " Internal use
+  let s:original_width = get(get(defx#custom#_get().option, '_'), 'winwidth')
 
-" Events
-" ---
+  " Events
+  " ---
 
-augroup user_plugin_defx
+  augroup user_plugin_defx
 	autocmd!
 
 	" Define defx window mappings
@@ -72,11 +73,11 @@ augroup user_plugin_defx
 	"	\ |   silent! highlight! link CursorLine NONE
 	"	\ | endif
 
-augroup END
+  augroup END
 
-" Internal functions
-" ---
-function! s:jump_dirty(dir) abort
+  " Internal functions
+  " ---
+  function! s:jump_dirty(dir) abort
 	" Jump to the next position with defx-git dirty symbols
 	let l:icons = get(g:, 'defx_git_indicators', {})
 	let l:icons_pattern = join(values(l:icons), '\|')
@@ -85,17 +86,17 @@ function! s:jump_dirty(dir) abort
 		let l:direction = a:dir > 0 ? 'w' : 'bw'
 		return search(printf('\(%s\)', l:icons_pattern), l:direction)
 	endif
-endfunction
+  endfunction
 
-function! s:defx_toggle_tree() abort
+  function! s:defx_toggle_tree() abort
 	" Open current file, or toggle directory expand/collapse
 	if defx#is_directory()
 		return defx#do_action('open_or_close_tree')
 	endif
 	return defx#do_action('multi', ['drop'])
-endfunction
+  endfunction
 
-function! s:defx_mappings() abort
+  function! s:defx_mappings() abort
 	" Defx window keyboard mappings
 	setlocal signcolumn=no expandtab
 
@@ -163,24 +164,24 @@ function! s:defx_mappings() abort
 	if exists('$TMUX')
 		nnoremap <silent><buffer><expr> gl  defx#async_action('call', '<SID>explorer')
 	endif
-endfunction
+  endfunction
 
-" TOOLS
-" ---
+  " TOOLS
+  " ---
 
-function! s:git_diff(context) abort
+  function! s:git_diff(context) abort
 	execute 'GdiffThis'
-endfunction
+  endfunction
 
-function! s:find_files(context) abort
+  function! s:find_files(context) abort
 	" Find files in parent directory with Denite
 	let l:target = a:context['targets'][0]
 	let l:parent = fnamemodify(l:target, ':h')
 	silent execute 'wincmd w'
 	silent execute 'Denite file/rec:'.l:parent
-endfunction
+  endfunction
 
-function! s:toggle_width(context) abort
+  function! s:toggle_width(context) abort
 	" Toggle between defx window width and longest line
 	let l:max = 0
 	for l:line in range(1, line('$'))
@@ -189,9 +190,9 @@ function! s:toggle_width(context) abort
 	endfor
 	let l:new = l:max == winwidth(0) ? s:original_width : l:max
 	call defx#call_action('resize', l:new)
-endfunction
+  endfunction
 
-function! s:explorer(context) abort
+  function! s:explorer(context) abort
 	" Open file-explorer split with tmux
 	let l:explorer = s:find_file_explorer()
 	if empty('$TMUX') || empty(l:explorer)
@@ -201,9 +202,9 @@ function! s:explorer(context) abort
 	let l:parent = fnamemodify(l:target, ':h')
 	let l:cmd = 'split-window -p 30 -c ' . l:parent . ' ' . l:explorer
 	silent execute '!tmux ' . l:cmd
-endfunction
+  endfunction
 
-function! s:find_file_explorer() abort
+  function! s:find_file_explorer() abort
 	" Detect terminal file-explorer
 	let s:file_explorer = get(g:, 'terminal_file_explorer', '')
 	if empty(s:file_explorer)
@@ -215,6 +216,16 @@ function! s:find_file_explorer() abort
 		endfor
 	endif
 	return s:file_explorer
-endfunction
+  endfunction
+endif
+
+" ------ NERDTree config (cf. https://github.com/ryanoasis/vim-devicons/issues/248#issuecomment-447057991)
+let NERDTreeChDirMode=2 " change current directory when setting new root directory
+let g:WebDevIconsNerdTreeBeforeGlyphPadding = ""
+let g:WebDevIconsUnicodeDecorateFolderNodes = v:true
+" Disable arrow icons at the left side of folders for NERDTree.
+let g:NERDTreeDirArrowExpandable = "\u00a0"
+let g:NERDTreeDirArrowCollapsible = "\u00a0"
+highlight! link NERDTreeFlags NERDTreeDir
 
 " vim: set ts=2 sw=2 tw=80 noet :

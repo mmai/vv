@@ -1,4 +1,8 @@
-set termguicolors       " Enable true color
+if $VIMCONF == 'all'
+  set termguicolors
+else
+  set notermguicolors
+endif
 
 " Pseudo-transparency for completion menu and floating windows
 if &termguicolors
@@ -61,7 +65,7 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " theme
-execute 'source' g:vvconfpath.'/colors/dracula.vim'
+execute 'source' g:vvconfpath.'/colors/falcon.vim'
 
 " --------- Startify config ------------
 hi StartifyHeader ctermfg=12 guifg=#68A8E4
