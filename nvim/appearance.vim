@@ -54,7 +54,7 @@ highlight def link Defx_filename_3_Unmerged Label
 hi WhichKeyDesc guifg=#d7af00  ctermfg=178 guibg=NONE ctermbg=NONE
 hi WhichKey  guifg=#5fafd7 ctermfg=74
 
-"GetColorSynatxGroup
+"GetColorSyntaxGroup
 " ---------------------------------------------------------
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
@@ -80,3 +80,12 @@ let g:startify_custom_header = [
   \ '   ┗┛    ╹   ╹ ╹',
   \ '   ',
   \ ]
+
+
+" Plugin: vim-choosewin
+" ---------------------------------------------------------
+let g:choosewin_label = 'SDFJKLZXCV'
+let g:choosewin_overlay_enable = 1
+let g:choosewin_statusline_replace = 1
+let g:choosewin_overlay_clear_multibyte = 0
+let g:choosewin_blink_on_land = 0

@@ -4,6 +4,20 @@
 set mouse=a " Enable mouse for scrolling and window resizing.
 set number
 
+set errorbells               " Trigger bell on error
+set visualbell               " Use visual bell instead of beeping
+set hidden                   " hide buffers when abandoned instead of unload
+set fileformats=unix,dos,mac " Use Unix as the standard file type
+set magic                    " For regular expressions turn magic on
+if has('patch-7.3.541')
+	set formatoptions+=j       " Remove comment leader when joining lines
+endif
+if has('vim_starting')
+	set encoding=utf-8
+	scriptencoding utf-8
+endif
+
+
 " Sync the last copy register with the system clipboard 
 set clipboard^=unnamed,unnamedplus
 
@@ -17,9 +31,71 @@ set scrolloff=8
 " Keep 15 columns next to the cursor when scrolling horizontally.
 set sidescrolloff=15
 
-" Disable archive, rails, temp and backup files.
-set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
-set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+" Wrap lines by default
+set wrap linebreak
+set showbreak=" "
+
+" When 'wrap' is on, display last line even if it doesn't fit.
+set display+=lastline
+
+" Allow easy navigation between wrapped lines.
+vmap j gj
+vmap k gk
+nmap j gj
+nmap k gk
+
+" Wildmenu {{{
+" --------
+if has('wildmenu')
+	if ! has('nvim')
+		set wildmode=list:longest
+	endif
+	set wildignorecase
+	set wildignore+=.git,.hg,.svn,.stversions,*.pyc,*.spl,*.o,*.out,*~,%*
+	set wildignore+=*.jpg,*.jpeg,*.png,*.gif,**/tmp/**,*.DS_Store
+	set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+	set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+	set wildignore+=**/node_modules/**,**/bower_modules/**,*/.sass-cache/*
+	set wildignore+=application/vendor/**,**/vendor/ckeditor/**,media/vendor/**
+	set wildignore+=__pycache__,*.egg-info,.pytest_cache,.mypy_cache/**
+	set wildcharm=<C-z>  " substitue for 'wildchar' (<Tab>) in macros
+endif
+" }}}
+
+
+" Timing {{{
+" ------
+set timeout ttimeout
+set timeoutlen=500   " Time out on mappings
+set ttimeoutlen=10   " Time out on key codes
+set updatetime=100   " Idle time to write swap and trigger CursorHold
+set redrawtime=1500  " Time in milliseconds for stopping display redraw
+
+" }}}
+
+" Searching {{{
+" ---------
+set ignorecase    " Search ignoring case
+set smartcase     " Keep case when searching with *
+set infercase     " Adjust case in insert completion mode
+set incsearch     " Incremental search
+set wrapscan      " Searches wrap around the end of the file
+set hlsearch      " Highlight search results
+
+set complete=.,w,b,k  " C-n completion: Scan buffers, windows and dictionary
+
+if exists('+inccommand')
+	set inccommand=nosplit
+endif
+
+if executable('rg')
+	set grepformat=%f:%l:%m
+	let &grepprg = 'rg --vimgrep' . (&smartcase ? ' --smart-case' : '')
+elseif executable('ag')
+	set grepformat=%f:%l:%m
+	let &grepprg = 'ag --vimgrep' . (&smartcase ? ' --smart-case' : '')
+endif
+" }}}
 
 " Return to last edit position when opening files
 augroup last_edit
@@ -29,3 +105,58 @@ augroup last_edit
        \   exe "normal! g`\"" |
        \ endif
 augroup END
+
+
+
+" Autocomplete {{{
+" ----------------
+set completeopt=menu,menuone    " Always show menu, even for one item
+set completeopt+=noselect,noinsert
+
+if exists('+completepopup')
+	set completeopt+=popup
+	set completepopup=height:4,width:60,highlight:InfoPopup
+endif
+
+if has('patch-8.1.0360') || has('nvim-0.4')
+	set diffopt+=internal,algorithm:patience
+	" set diffopt=indent-heuristic,algorithm:patience
+endif
+" }}}
+
+
+set showtabline=2       " Always show the tabs line
+set winwidth=30         " Minimum width for active window
+set winminwidth=10      " Minimum width for inactive windows
+set winminheight=1      " Minimum height for inactive window
+set pumheight=15        " Pop-up menu's line height
+set helpheight=12       " Minimum help window height
+set previewheight=12    " Completion preview height
+
+set showcmd             " Show command in status line
+set cmdheight=2         " Height of the command line
+set cmdwinheight=5      " Command-line lines
+set noequalalways       " Don't resize windows on split or close
+set laststatus=2        " Always show a status line
+set display=lastline
+
+if has('folding') && has('vim_starting')
+	set foldenable
+	set foldmethod=indent
+	set foldlevelstart=99
+endif
+
+if has('nvim-0.4')
+	set signcolumn=yes:1
+else
+	set signcolumn=yes           " Always show signs column
+endif
+
+if has('conceal') && v:version >= 703
+	" For snippet_complete marker
+	set conceallevel=2 concealcursor=niv
+endif
+
+if exists('+previewpopup')
+	set previewpopup=height:10,width:60
+endif

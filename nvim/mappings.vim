@@ -14,7 +14,40 @@ nnoremap <expr> ,sv ':source '.stdpath('config').'/init.vim'. "\n"
 " ,cd => change directory to the file being edited
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 
+"delete buffer
+nnoremap <C-x> :<C-u>bd<CR>
+
+" choosewin
+nnoremap ù :ChooseWin<CR>
+
 " ------ UI ------------
 " Open sidebar file browser
 "nnoremap <leader>e :CocCommand explorer<CR> 
 nnoremap <leader>e :Defx<CR>
+" browse current file directory
+nnoremap - :LfCurrentDirectory<CR>
+" browse tags 
+nnoremap <leader>t :Vista coc<CR>
+
+" ------ Completion with Coc ---------
+"Use tab for trigger completion with characters ahead and navigate
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+
+" ---------  Coc ------------------
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> <Leader>ci <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
