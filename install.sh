@@ -13,7 +13,7 @@ install_plugins() {
   echo "Installing Plug... "
 	curl -fLo $XDG_DATA_HOME/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   echo "Running PlugInstall... "
-  XDG_CONFIG_HOME=$XDG_CONFIG_HOME XDG_CACHE_HOME=$XDG_CACHE_HOME XDG_DATA_HOME=$XDG_DATA_HOME nvim +PlugInstall +UpdateRemotePlugins +qall
+  VIMCONF=$VIMCONF XDG_CONFIG_HOME=$XDG_CONFIG_HOME XDG_CACHE_HOME=$XDG_CACHE_HOME XDG_DATA_HOME=$XDG_DATA_HOME nvim +PlugInstall +UpdateRemotePlugins +qall
   echo "done"
 }
 

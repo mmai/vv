@@ -1,4 +1,4 @@
-if exists('g:loaded_defx')
+if $VIMCONF == 'all'
   " --- plugin defx-git
   let g:defx_git#indicators = {
 			\ 'Modified'  : '•',

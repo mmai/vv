@@ -23,7 +23,7 @@ nnoremap ù :ChooseWin<CR>
 " ------ UI ------------
 " Open sidebar file browser
 "nnoremap <leader>e :CocCommand explorer<CR> 
-if exists('g:loaded_defx')
+if $VIMCONF == 'all'
   nnoremap <leader>e :Defx<CR>
 else
   nnoremap <leader>e :NERDTreeToggle<CR>
