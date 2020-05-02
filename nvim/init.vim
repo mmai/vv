@@ -1,8 +1,11 @@
-" Must be first
-execute 'source' stdpath('config').'/plugins.vim'
+let s:confpath = fnamemodify(expand('<sfile>'), ':h')
+" let s:confpath = stdpath('config')
 
-execute 'source' stdpath('config').'/sidebar.vim'
-execute 'source' stdpath('config').'/base.vim'
-execute 'source' stdpath('config').'/behaviour.vim'
-execute 'source' stdpath('config').'/mappings.vim'
-execute 'source' stdpath('config').'/appearance.vim'
+" Must be first
+execute 'source' s:confpath.'/plugins.vim'
+
+execute 'source' s:confpath.'/sidebar.vim'
+execute 'source' s:confpath.'/base.vim'
+execute 'source' s:confpath.'/behaviour.vim'
+execute 'source' s:confpath.'/mappings.vim'
+execute 'source' s:confpath.'/appearance.vim'

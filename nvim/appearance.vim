@@ -61,7 +61,7 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " theme
-execute 'source' stdpath('config').'/colors/dracula.vim'
+execute 'source' s:confpath.'/colors/dracula.vim'
 
 " --------- Startify config ------------
 hi StartifyHeader ctermfg=12 guifg=#68A8E4
