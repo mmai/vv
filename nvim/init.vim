@@ -1,11 +1,10 @@
-let s:confpath = fnamemodify(expand('<sfile>'), ':h')
-" let s:confpath = stdpath('config')
+let g:vvconfpath = fnamemodify(expand('<sfile>'), ':h')
 
 " Must be first
-execute 'source' s:confpath.'/plugins.vim'
+execute 'source' g:vvconfpath.'/plugins.vim'
 
-execute 'source' s:confpath.'/sidebar.vim'
-execute 'source' s:confpath.'/base.vim'
-execute 'source' s:confpath.'/behaviour.vim'
-execute 'source' s:confpath.'/mappings.vim'
-execute 'source' s:confpath.'/appearance.vim'
+execute 'source' g:vvconfpath.'/sidebar.vim'
+execute 'source' g:vvconfpath.'/base.vim'
+execute 'source' g:vvconfpath.'/behaviour.vim'
+execute 'source' g:vvconfpath.'/mappings.vim'
+execute 'source' g:vvconfpath.'/appearance.vim'

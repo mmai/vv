@@ -47,10 +47,10 @@ Plug 'tomtom/tcomment_vim' " Comments
 Plug 'ludovicchabant/vim-gutentags' " Autogenerate tags
 if $VIMCONF == 'all'
   Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense engine, full LSP support as VSCode
+  Plug 'pechorin/any-jump.vim' " <leader>j open floating window with definition and usages
 endif
 Plug 'liuchengxu/vista.vim' " Navigate tags
 Plug 'honza/vim-snippets' " snippets for many languages, used by coc-snippets extension
-Plug 'pechorin/any-jump.vim' " <leader>j open floating window with definition and usages
 
 if $VIMCONF == 'all'
   Plug 'LnL7/vim-nix' " nix 

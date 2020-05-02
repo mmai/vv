@@ -8,8 +8,8 @@ inoremap jk <esc>
 inoremap JK <esc>
 
 "Easy vimrc editing
-nnoremap <expr> ,ev ':vsplit '.s:confpath.'/init.vim'. "\n"
-nnoremap <expr> ,sv ':source '.s:confpath.'/init.vim'. "\n"
+nnoremap <expr> ,ev ':vsplit '.g:vvconfpath.'/init.vim'. "\n"
+nnoremap <expr> ,sv ':source '.g:vvconfpath.'/init.vim'. "\n"
 
 " ,cd => change directory to the file being edited
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
