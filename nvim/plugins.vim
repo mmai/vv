@@ -21,8 +21,8 @@ Plug 'moll/vim-bbye' " :Bdelete and :Bwipeout quit buffers nicely without destro
 Plug 't9md/vim-choosewin' " easy pane switching
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " needed by fzf.vim
 Plug 'junegunn/fzf.vim' " integrate fzf with vim : provides Rg for search, Buffers, Files, GFiles (open files based on git), Maps... 
-" --- defx
 if has('nvim')
+  " --- defx
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' } " sidebar file browser
   Plug 'kristijanhusak/defx-icons' " dev icons for defx
   Plug 'kristijanhusak/defx-git' " git status for defx
@@ -47,14 +47,12 @@ Plug 'christoomey/vim-tmux-navigator' " Allow pane movement to jump out of vim i
 " -----------  Coding
 Plug 'tomtom/tcomment_vim' " Comments
 Plug 'ludovicchabant/vim-gutentags' " Autogenerate tags
+Plug 'liuchengxu/vista.vim' " Navigate tags
 if $VIMCONF == 'all'
   Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense engine, full LSP support as VSCode
   Plug 'honza/vim-snippets' " snippets for many languages, used by coc-snippets extension
   Plug 'pechorin/any-jump.vim' " <leader>j open floating window with definition and usages
-endif
-Plug 'liuchengxu/vista.vim' " Navigate tags
 
-if $VIMCONF == 'all'
   Plug 'LnL7/vim-nix' " nix 
   Plug 'rust-lang/rust.vim' " rust
 endif
