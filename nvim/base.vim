@@ -43,6 +43,9 @@ vmap j gj
 vmap k gk
 nmap j gj
 nmap k gk
+ 
+" Enable persistent undo so that undo history persists across vim sessions
+set undofile
 
 " Wildmenu {{{
 " --------

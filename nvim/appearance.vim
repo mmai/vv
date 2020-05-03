@@ -65,7 +65,11 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " theme
-execute 'source' g:vvconfpath.'/colors/falcon.vim'
+if $VIMCONF == 'all'
+  execute 'source' g:vvconfpath.'/colors/dracula.vim'
+else
+  execute 'source' g:vvconfpath.'/colors/falcon.vim'
+endif
 
 " --------- Startify config ------------
 hi StartifyHeader ctermfg=12 guifg=#68A8E4
@@ -96,3 +100,8 @@ let g:choosewin_overlay_enable = 1
 let g:choosewin_statusline_replace = 1
 let g:choosewin_overlay_clear_multibyte = 0
 let g:choosewin_blink_on_land = 0
+
+
+" Plugin: FZF Fuzzy-find 
+" ---------------------------------------------------------
+let g:fzf_layout = { 'down': '~40%' }

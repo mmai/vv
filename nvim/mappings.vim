@@ -14,11 +14,27 @@ nnoremap <expr> ,sv ':source '.g:vvconfpath.'/init.vim'. "\n"
 " ,cd => change directory to the file being edited
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 
+" Save with sudo
+cmap W!! w !sudo tee % >/dev/null
+
 "delete buffer
 nnoremap <C-x> :<C-u>bd<CR>
 
 " choosewin
 nnoremap ù :ChooseWin<CR>
+
+"--------------- Personal wiki ----------------
+" Space + Enter : open markdown wiki links in a new split
+nnoremap <Space><CR> <C-w>v:MdwiGotoLink<CR>
+
+" ------- FZF Fuzzy-find plugin shortcuts
+let $FZF_DEFAULT_COMMAND = 'fd --type f'
+let $FZF_CTRL_T_COMMAND  = 'fd --type f'
+map <C-p> :Files<cr>
+nmap <C-p> :Files<cr>
+" View commits in fzf
+nmap <Leader>c :Commits<cr>
+
 
 " ------ UI ------------
 " Open sidebar file browser
@@ -29,12 +45,18 @@ else
   nnoremap <leader>e :NERDTreeToggle<CR>
 endif
 
-" browse tags 
-nnoremap <leader>t :Vista coc<CR>
-" browse current file directory
 if $VIMCONF == 'all'
+  " browse tags 
+  nnoremap <leader>t :Vista coc<CR>
+  " browse current file directory with lf
   nnoremap - :LfCurrentDirectory<CR>
+else
+  " browse tags 
+  nnoremap <leader>t :Vista<CR>
 endif
+
+" undo tree
+nnoremap <silent> <Leader>u :MundoToggle<CR>
 
 if $VIMCONF == 'all'
   " ------ Completion with Coc ---------

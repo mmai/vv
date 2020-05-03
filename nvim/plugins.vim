@@ -16,6 +16,9 @@ endif
 "--------- Layout and style
 Plug 'wesQ3/vim-windowswap' "swap windows: <leader>ww (1st time on 1st window, 2nd time on 2nd window => the two windows are then swaped)
 Plug 'moll/vim-bbye' " :Bdelete and :Bwipeout quit buffers nicely without destroying windows
+" if $VIMCONF == 'all'
+"   Plug 'voldikss/vim-floaterm'
+" endif
 
 "----------- Navigation
 Plug 't9md/vim-choosewin' " easy pane switching
@@ -37,6 +40,8 @@ else
   Plug 'dhruvasagar/vim-vinegar' " Enhance netrw (vim default file browser), NERDTree version
 endif
 
+Plug 'simnalamburt/vim-mundo' " Visualize undo tree
+
 " -- maybe ?
 "  https://github.com/miyakogi/sidepanel.vim " unify sidebars (mundo, defx,
 "  tagbar..)
@@ -45,9 +50,16 @@ endif
 Plug 'christoomey/vim-tmux-navigator' " Allow pane movement to jump out of vim into tmux
 
 " -----------  Coding
+Plug 'tpope/vim-fugitive' " Git integration
 Plug 'tomtom/tcomment_vim' " Comments
+Plug 'godlygeek/tabular' " :Tabularize /<delimiter> (must be before vim-markdown)
 Plug 'ludovicchabant/vim-gutentags' " Autogenerate tags
 Plug 'liuchengxu/vista.vim' " Navigate tags
+
+
+Plug 'sheerun/vim-polyglot' " syntax highlighting, indentation for a wide collection of languages
+Plug 'alvan/vim-closetag' " Close html / xml tags
+Plug 'jiangmiao/auto-pairs' " deals intelligently with pairs of punctuation () [] '' {} ... (better than kana/vim-smartinput)
 if $VIMCONF == 'all'
   Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense engine, full LSP support as VSCode
   Plug 'honza/vim-snippets' " snippets for many languages, used by coc-snippets extension
@@ -55,6 +67,30 @@ if $VIMCONF == 'all'
 
   Plug 'LnL7/vim-nix' " nix 
   Plug 'rust-lang/rust.vim' " rust
+  Plug 'alvan/vim-php-manual', {'for': 'php'} " Search for word under cursor
+  
+  " Typescript / Js
+  Plug 'HerringtonDarkholme/yats.vim' , { 'for': 'typescript' } " typescript syntax highlighting
+  Plug 'gavocanov/vim-js-indent' "works well whith yajs.vim
+  Plug 'posva/vim-vue' " Vuejs syntax highlighting
+
+  " Python
+  Plug 'Vimjas/vim-python-pep8-indent' , { 'for': 'python' }
+  Plug 'vim-scripts/python_match.vim' , { 'for': 'python' }
+  Plug 'vim-python/python-syntax' , { 'for': 'python' }
+  Plug 'raimon49/requirements.txt.vim' , { 'for': 'requirements' }
+endif
+
+" Markdown
+Plug 'gabrielelana/vim-markdown' " better list indentation handling than plasticboy/vim-markdown, toggle checkboxes
+Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existent directories before writing the buffer
+Plug 'mmai/vim-markdown-wiki' " eases the navigation between files in a personnal wiki based on markdown
+Plug 'aklt/plantuml-syntax'    " PlantUML syntax
+if $VIMCONF == 'all'
+  Plug 'junegunn/goyo.vim' " writeroom like
+  Plug 'junegunn/limelight.vim' " to be use with Goyo: dim surrounding paragraphs
+  Plug 'reedes/vim-pencil' "vim for writers (TooglePencil) : line wrap, undo/redo by sentences, hide markdown formating chars..
+  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  } " can preview Plantuml diagrams (not livedown) :MarkdownPreview / :MarkdownPreviewStop
 endif
 
 call plug#end() " Initialize plugin system
