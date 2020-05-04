@@ -18,3 +18,8 @@ augroup tabulation_languages
   autocmd Filetype python setlocal ts=4 sts=4 sw=4
   autocmd Filetype html setlocal ts=2 sts=2 sw=2
 augroup END
+
+" ---------------- Coc
+if $VIMCONF == 'all'
+  execute 'source' g:vvconfpath.'/coc-config.vim'
+endif
