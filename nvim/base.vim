@@ -47,6 +47,9 @@ nmap k gk
 " Enable persistent undo so that undo history persists across vim sessions
 set undofile
 
+" select short messages displayed in status bar
+set shortmess=aFc
+
 " Expand %% to path of current buffer in command mode.
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 

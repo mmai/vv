@@ -24,8 +24,16 @@ nnoremap <C-x> :<C-u>bd<CR>
 nnoremap ù :ChooseWin<CR>
 
 "--------------- Personal wiki ----------------
-" Space + Enter : open markdown wiki links in a new split
-nnoremap <Space><CR> <C-w>v:MdwiGotoLink<CR>
+" , + Enter : open markdown wiki links in a new split
+nnoremap ,<CR> <C-w>v:MdwiGotoLink<CR>
+" Go back in history
+nnoremap ,, :BufSurfBack<CR>
+" Go forward in history
+nnoremap ,; :BufSurfForward<CR>
+" When cursor is on a command between backtics, execute it (ex: `tmuxp load -y myproject`)
+nnoremap gt yi`:!<C-r>"<CR>
+" Toggle checkboxes
+nnoremap <silent> <buffer> <space> :call behaviour#SwitchStatus()<CR>
 
 " ------- FZF Fuzzy-find plugin shortcuts
 let $FZF_DEFAULT_COMMAND = 'fd --type f'

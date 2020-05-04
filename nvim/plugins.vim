@@ -21,6 +21,7 @@ Plug 'moll/vim-bbye' " :Bdelete and :Bwipeout quit buffers nicely without destro
 " endif
 
 "----------- Navigation
+Plug 'ton/vim-bufsurf' " enables surfing through buffers based on viewing history per window
 Plug 't9md/vim-choosewin' " easy pane switching
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " needed by fzf.vim
 Plug 'junegunn/fzf.vim' " integrate fzf with vim : provides Rg for search, Buffers, Files, GFiles (open files based on git), Maps... 
@@ -82,7 +83,7 @@ if $VIMCONF == 'all'
 endif
 
 " Markdown
-Plug 'gabrielelana/vim-markdown' " better list indentation handling than plasticboy/vim-markdown, toggle checkboxes
+Plug 'plasticboy/vim-markdown' " syntax for markdown
 Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existent directories before writing the buffer
 Plug 'mmai/vim-markdown-wiki' " eases the navigation between files in a personnal wiki based on markdown
 Plug 'aklt/plantuml-syntax'    " PlantUML syntax
