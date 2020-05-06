@@ -47,6 +47,18 @@ nmap k gk
 " Enable persistent undo so that undo history persists across vim sessions
 set undofile
 
+" Autoindent when starting new line, or using `o` or `O`.
+set autoindent
+
+" Use 'shiftwidth' when using `<Tab>` in front of a line.
+" By default it's used only for shift commands (`<`, `>`).
+set smarttab
+
+" Indent using two spaces.
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
 " select short messages displayed in status bar
 set shortmess=aFc
 
@@ -163,7 +175,8 @@ endif
 
 if has('conceal') && v:version >= 703
 	" For snippet_complete marker
-	set conceallevel=2 concealcursor=niv
+	" set conceallevel=2 concealcursor=niv
+	set conceallevel=2
 endif
 
 if exists('+previewpopup')

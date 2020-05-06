@@ -4,6 +4,8 @@ else
   call plug#begin(expand('~/.vim/plugged'))
 endif
 
+if $VIMCONF == 'debug'
+else
 Plug 'mhinz/vim-startify' " Fancy start screen with links to recent files
 Plug 'ryanoasis/vim-devicons' " Dev icons, needed by spaceline.vim
 if $VIMCONF == 'all'
@@ -93,6 +95,7 @@ if $VIMCONF == 'all'
   Plug 'reedes/vim-pencil' "vim for writers (TooglePencil) : line wrap, undo/redo by sentences, hide markdown formating chars..
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  } " can preview Plantuml diagrams (not livedown) :MarkdownPreview / :MarkdownPreviewStop
 endif
+endif " vimdebug
 
 call plug#end() " Initialize plugin system
 

@@ -41,7 +41,7 @@ let $FZF_CTRL_T_COMMAND  = 'fd --type f'
 map <C-p> :Files<cr>
 nmap <C-p> :Files<cr>
 " View commits in fzf
-nmap <Leader>c :Commits<cr>
+nmap <Leader>g :Commits<cr>
 
 
 " ------ UI ------------
