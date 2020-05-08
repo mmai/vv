@@ -59,8 +59,18 @@ Plug 'godlygeek/tabular' " :Tabularize /<delimiter> (must be before vim-markdown
 Plug 'ludovicchabant/vim-gutentags' " Autogenerate tags
 Plug 'liuchengxu/vista.vim' " Navigate tags
 
+" Polyglot : syntax highlighting, indentation for a wide collection of languages
+" provides, among others plugins :
+"     'LnL7/vim-nix'
+"     'rust-lang/rust.vim'
+"     'HerringtonDarkholme/yats.vim' , { 'for': 'typescript' }
+"     'posva/vim-vue'
+"     'Vimjas/vim-python-pep8-indent' , { 'for': 'python' }
+"     'vim-python/python-syntax' , { 'for': 'python' }
+"     'plasticboy/vim-markdown'
+"     'aklt/plantuml-syntax'
+Plug 'sheerun/vim-polyglot' 
 
-Plug 'sheerun/vim-polyglot' " syntax highlighting, indentation for a wide collection of languages
 Plug 'alvan/vim-closetag' " Close html / xml tags
 Plug 'jiangmiao/auto-pairs' " deals intelligently with pairs of punctuation () [] '' {} ... (better than kana/vim-smartinput)
 if $VIMCONF == 'all'
@@ -68,27 +78,19 @@ if $VIMCONF == 'all'
   Plug 'honza/vim-snippets' " snippets for many languages, used by coc-snippets extension
   Plug 'pechorin/any-jump.vim' " <leader>j open floating window with definition and usages
 
-  Plug 'LnL7/vim-nix' " nix 
-  Plug 'rust-lang/rust.vim' " rust
   Plug 'alvan/vim-php-manual', {'for': 'php'} " Search for word under cursor
   
-  " Typescript / Js
-  Plug 'HerringtonDarkholme/yats.vim' , { 'for': 'typescript' } " typescript syntax highlighting
+  " Typescript / Js (see also plugins loaded by polyglot)
   Plug 'gavocanov/vim-js-indent' "works well whith yajs.vim
-  Plug 'posva/vim-vue' " Vuejs syntax highlighting
 
-  " Python
-  Plug 'Vimjas/vim-python-pep8-indent' , { 'for': 'python' }
+  " Python (see also plugins loaded by polyglot)
   Plug 'vim-scripts/python_match.vim' , { 'for': 'python' }
-  Plug 'vim-python/python-syntax' , { 'for': 'python' }
   Plug 'raimon49/requirements.txt.vim' , { 'for': 'requirements' }
 endif
 
-" Markdown
-Plug 'plasticboy/vim-markdown' " syntax for markdown
+" Markdown (see also plugins loaded by polyglot)
 Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existent directories before writing the buffer
 Plug 'mmai/vim-markdown-wiki' " eases the navigation between files in a personnal wiki based on markdown
-Plug 'aklt/plantuml-syntax'    " PlantUML syntax
 if $VIMCONF == 'all'
   Plug 'junegunn/goyo.vim' " writeroom like
   Plug 'junegunn/limelight.vim' " to be use with Goyo: dim surrounding paragraphs

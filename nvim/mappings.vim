@@ -23,6 +23,9 @@ nnoremap <C-x> :<C-u>bd<CR>
 " choosewin
 nnoremap ù :ChooseWin<CR>
 
+" php-manual (override default <c-h> conflicting with tmux-navigator)
+let g:php_manual_online_search_shortcut = '<leader>h'
+
 "--------------- Personal wiki ----------------
 " , + Enter : open markdown wiki links in a new split
 nnoremap ,<CR> <C-w>v:MdwiGotoLink<CR>
@@ -33,7 +36,7 @@ nnoremap ,; :BufSurfForward<CR>
 " When cursor is on a command between backtics, execute it (ex: `tmuxp load -y myproject`)
 nnoremap gt yi`:!<C-r>"<CR>
 " Toggle checkboxes
-nnoremap <silent> <buffer> <space> :call behaviour#SwitchStatus()<CR>
+nnoremap <silent> <buffer> <space><space> :call behaviour#SwitchStatus()<CR>
 
 " ------- FZF Fuzzy-find plugin shortcuts
 let $FZF_DEFAULT_COMMAND = 'fd --type f'

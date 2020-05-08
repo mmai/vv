@@ -21,6 +21,10 @@ endif
 " Sync the last copy register with the system clipboard 
 set clipboard^=unnamed,unnamedplus
 
+" Open links with system default applications (replace by 'firefox' for
+" example if xdg-open behaves strangely  )
+let g:netrw_browsex_viewer= "xdg-open"
+
 " Always focus on splited window.
 set splitright
 set splitbelow

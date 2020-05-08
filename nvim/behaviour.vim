@@ -6,7 +6,7 @@ endif
 " ----------- MARKDOWN-------------------------
 " Disable line numbers in markdown
 autocmd FileType markdown setlocal nonumber
-
+autocmd FileType markdown CocCommand git.toggleGutters "XXX not sure about that
 " plasticboy/vim-markdown settings
 let g:vim_markdown_folding_level = 4
 let g:vim_markdown_folding_style_pythonic = 1
@@ -29,7 +29,8 @@ let g:vim_markdown_fenced_languages = [
 			\ 'makefile=make',
 			\ 'py=python'
 			\ ]
-" toggle checkboxes in markdown files (code from gabrielelana/vim-markdown)
+
+" Toggle checkboxes in markdown files (code from gabrielelana/vim-markdown)
 " {{{ SWITCH STATUS
 function! behaviour#SwitchStatus()
   let current_line = getline('.')
