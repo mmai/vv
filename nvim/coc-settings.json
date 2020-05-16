@@ -39,8 +39,10 @@
   "diagnostic.warningSign": "●",
   "diagnostic.displayByAle": false,
   "diagnostic.refreshOnInsertMode": true,
+  //rust
+  "rust-analyzer.serverPath": "/run/current-system/sw/bin/rust-analyzer",
   //git
-  "git.enableGutters": false,
+  "git.enableGutters": true,
   "git.branchCharacter": "\uf418",
   "git.addGBlameToBufferVar": true,
   "git.addGBlameToVirtualText": true,
@@ -93,6 +95,6 @@
   "eslint.autoFix": true,
   "eslint.autoFixOnSave": true,
   // python
-  "python.jediEnabled": false,
+  "python.jediEnabled": false
   // add your languageServer into this list
 }
