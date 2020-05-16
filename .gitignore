@@ -6,3 +6,4 @@ chromium
 configstore
 nvim/autoload
 nvim/plugged
+nvim/sessions
