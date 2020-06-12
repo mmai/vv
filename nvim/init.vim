@@ -1,7 +1,10 @@
 let g:vvconfpath = fnamemodify(expand('<sfile>'), ':h')
 set nocompatible
 
-" Must be first
+" /!\  Conflicts resolution
+let g:AutoPairsShortcutToggle = '' " Disable shortcut <M-p> (conflict with yankstack)
+
+" Must be before other imports
 execute 'source' g:vvconfpath.'/plugins.vim'
 
 if $VIMCONF == 'debug'

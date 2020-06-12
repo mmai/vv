@@ -44,6 +44,7 @@ else
 endif
 
 Plug 'simnalamburt/vim-mundo' " Visualize undo tree
+Plug 'maxbrunsfeld/vim-yankstack' " Enable to paste previous yanks : <alt>p / <alt><shift>p
 
 " -- maybe ?
 "  https://github.com/miyakogi/sidepanel.vim " unify sidebars (mundo, defx,
@@ -53,6 +54,7 @@ Plug 'simnalamburt/vim-mundo' " Visualize undo tree
 Plug 'christoomey/vim-tmux-navigator' " Allow pane movement to jump out of vim into tmux
 
 " -----------  Coding
+Plug 'editorconfig/editorconfig-vim' " EditorConfig support (project based code style) 
 Plug 'tpope/vim-fugitive' " Git integration
 Plug 'tomtom/tcomment_vim' " Comments
 Plug 'godlygeek/tabular' " :Tabularize /<delimiter> (must be before vim-markdown)
@@ -110,7 +112,6 @@ let g:coc_global_extensions =[
     \ 'coc-highlight',
     \ 'coc-git',
     \ 'coc-snippets',
-    \ 'coc-yank',
     \ 'coc-prettier',
     \ 'coc-html',
     \ 'coc-emmet',

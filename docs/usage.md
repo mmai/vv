@@ -15,6 +15,7 @@ Both use j to go up directories, k to open directory or file
 
 ## Edit
 
+- paste from previous copy history : <meta>p / <meta><shift>p
 - save with sudo `:W!!`
 
 ## Search
