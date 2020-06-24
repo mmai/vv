@@ -29,6 +29,30 @@ hi PmenuSbar ctermfg=NONE ctermbg=234 guifg=NONE guibg=#212026 guisp=NONE cterm=
 hi PmenuSel ctermfg=NONE ctermbg=60 guifg=NONE guibg=#5e5079 guisp=NONE cterm=NONE gui=NONE
 hi PmenuThumb ctermfg=NONE ctermbg=60 guifg=NONE guibg=#5d4d7a guisp=NONE cterm=NONE gui=NONE
 
+"Buffet (tabs bar) colors
+" ---------------------------------------------------------
+"    see defaults at https://github.com/hardcoreplayers/vim-buffet/blob/master/plugin/buffet.vim
+" BuffetCurrentBuffer - the current buffer.
+" BuffetActiveBuffer - an active buffer (a non-current buffer visible in a non-current window).
+" BuffetBuffer - a non-current and non-active buffer.
+" BuffetModCurrentBuffer - the current buffer when modified.
+" BuffetModActiveBuffer - a modified active buffer (a non-current buffer visible in a non-current window).
+" BuffetModBuffer - a modified non-current and non-active buffer.
+" BuffetTrunc - the truncation indicator (count of truncated buffers from the left or right).
+" BuffetTab - a tab.
+function! g:BuffetSetCustomColors()
+    " hi! BuffetCurrentBuffer cterm=NONE ctermbg=106 ctermfg=8 guibg=#b8bb26 guifg=#000000
+    " hi! BuffetTrunc cterm=bold ctermbg=10 ctermfg=8 guibg=##999999 guifg=#000000
+    " hi! BuffetTab cterm=NONE ctermbg=203 ctermfg=8 guibg=#FF5555 guifg=#000000
+    " hi! BuffetActiveBuffer cterm=NONE ctermbg=10 ctermfg=239 guibg=#504945 guifg=#000000
+    " hi! BuffetBuffer cterm=NONE  ctermfg=10 guibg=buffermidcolor guifg=#504945
+
+
+
+    hi! BuffetActiveBuffer cterm=NONE ctermbg=10 ctermfg=8 guibg=#504945 guifg=#b8bb26
+    hi! BuffetBuffer cterm=NONE ctermbg=10 ctermfg=239 guibg=#504945 guifg=#BBBBBB
+endfunction
+
 "coc setting
 " ---------------------------------------------------------
 hi CocCursorRange guibg=#b16286 guifg=#ebdbb2

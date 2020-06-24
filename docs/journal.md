@@ -6,7 +6,7 @@
 	* defx for sidebar file navigator (prettier than NerdTree)
 	* lf integration
 * Coc extensions
-	* general: tabnine (intelligent completion)
+	* general: tabnine (intelligent completion) => too resource hungry
 	* webdev: tsserver json html css vetur(vuejs)
 	* php : phpls
 
