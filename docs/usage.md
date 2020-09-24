@@ -21,6 +21,7 @@ Both use j to go up directories, k to open directory or file
 ## Search
 
 - global search `:Rg thingtosearch`
+- global search and replace : `:CocSearch thingtosearch` then do the substitution in the refactor window
 
 ## Code
 

@@ -2,10 +2,36 @@
 
 - markdown
 - tabularize ??
-- global search & replace : far, coc ?
-	https://gitter.im/neoclide/coc.nvim?at=5e45b082df1153705e32b01a
-	Heyward Fann @fannheyward févr. 13 15:34
-	I'm using this mapping nmap <leader>rf <Plug>(coc-refactor), put cursor on word, do <leader>cf, will open a new window with project wide changes preview
 - %% to get current file in cde
 - colors in gutter
 - php symfony : imports ?
+
+résoudre erreurs sur serveur ratpdev (vim 7): 
+```
+Erreur détectée en traitant /home/web_portail2/vv/nvim/base.vim :
+ligne   67 :
+E539: Caractère <F> invalide: shortmess=aFc
+ligne  139 :
+E474: Argument invalide: completeopt+=noselect,noinsert
+ligne  177 :
+E518: Option inconnue: signcolumn=yes
+Erreur détectée en traitant /home/web_portail2/vv/nvim/appearance.vim :
+ligne    4 :
+E518: Option inconnue: notermguicolors
+ligne    8 :
+E113: Option inconnue : termguicolors
+E15: Expression invalide : &termguicolors
+Erreur détectée en traitant /home/web_portail2/vv/nvim/sidebar.vim :
+ligne  225 :
+E121: Variable non définie : v:true
+E15: Expression invalide : v:true
+Erreur détectée en traitant /home/web_portail2/vv/nvim/plugged/vim-gutentags/plugin/gutentags.vim :
+ligne   17 :
+gutentags: this plugin requires the job API from Vim8 or Neovim.
+Erreur détectée en traitant function <SNR>26_do_vim_enter..vista#RunForNearestMethodOrFunction :
+ligne    3 :
+E121: Variable non définie : v:false
+Erreur détectée en traitant function <SNR>26_do_vim_enter..vista#RunForNearestMethodOrFunction :
+ligne    3 :
+E116: Arguments invalides pour la fonction vista#executive#ctags#Execute
+```
