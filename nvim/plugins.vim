@@ -9,8 +9,8 @@ else
 Plug 'mhinz/vim-startify' " Fancy start screen with links to recent files
 Plug 'ryanoasis/vim-devicons' " Dev icons, needed by spaceline.vim
 if $VIMCONF == 'all'
-  Plug 'hardcoreplayers/vim-buffet' " top tab bar (buffers)
-  Plug 'hardcoreplayers/spaceline.vim' " status line (faster than airline lightline eline)
+  Plug 'bagrat/vim-buffet' " top tab bar (buffers)
+  Plug 'glepnir/spaceline.vim' " status line (faster than airline lightline eline)
 else
   Plug 'vim-airline/vim-airline' " Status bar & buffers in tab bar
 endif
