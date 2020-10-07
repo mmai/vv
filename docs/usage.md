@@ -23,6 +23,12 @@ Both use j to go up directories, k to open directory or file
 - global search `:Rg thingtosearch`
 - global search and replace : `:CocSearch thingtosearch` then do the substitution in the refactor window
 
+## Writing
+
+Abbreviations:
+- edit abbreviations in `nvim/after/ftplugin/markdown.vim`
+- cancel abbreviation completion with <CTRL>V
+
 ## Code
 
 ## Git
