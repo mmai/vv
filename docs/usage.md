@@ -18,6 +18,16 @@ Both use j to go up directories, k to open directory or file
 - paste from previous copy history : <meta>p / <meta><shift> p
 - save with sudo `:W!!`
 
+## Coding
+
+- Show documentation `K`
+- Navigate through classes ans functions : <leader>`t`
+- Show definitions and usages : <leader>`j`
+- Go to definition : `gd`
+- Go to type definition : `gy`
+- Go to implementation : <leader>`ci`
+- Show references : `gr`
+
 ## Search
 
 - global search `:Rg thingtosearch`
