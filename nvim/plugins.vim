@@ -18,9 +18,9 @@ endif
 "--------- Layout and style
 Plug 'wesQ3/vim-windowswap' "swap windows: <leader>ww (1st time on 1st window, 2nd time on 2nd window => the two windows are then swaped)
 Plug 'moll/vim-bbye' " :Bdelete and :Bwipeout quit buffers nicely without destroying windows
-" if $VIMCONF == 'all'
-"   Plug 'voldikss/vim-floaterm'
-" endif
+if $VIMCONF == 'all'
+  Plug 'voldikss/vim-floaterm'
+endif
 
 "----------- Navigation
 Plug 'ton/vim-bufsurf' " enables surfing through buffers based on viewing history per window
