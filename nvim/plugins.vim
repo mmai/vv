@@ -93,6 +93,7 @@ endif
 " Markdown (see also plugins loaded by polyglot)
 Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existent directories before writing the buffer
 Plug 'mmai/vim-markdown-wiki' " eases the navigation between files in a personnal wiki based on markdown
+Plug 'mmai/vim-markdownizer' " Organizer base on markdown 
 if $VIMCONF == 'all'
   Plug 'junegunn/goyo.vim' " writeroom like
   Plug 'junegunn/limelight.vim' " to be use with Goyo: dim surrounding paragraphs

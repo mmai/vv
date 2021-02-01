@@ -78,4 +78,7 @@ endif
 " undo tree
 nnoremap <silent> <Leader>u :MundoToggle<CR>
 
+" Markdownizer dashboard
+nnoremap <silent> <Leader>p :MarkdownizerDashboard<CR>
+
 " See also coc-config.vim
