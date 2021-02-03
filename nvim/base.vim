@@ -64,7 +64,10 @@ set shiftwidth=2
 set expandtab
 
 " select short messages displayed in status bar
-set shortmess=aFc
+set shortmess=ac
+if $VIMCONF == 'all'
+  set shortmess+=F
+endif
 
 " Expand %% to path of current buffer in command mode.
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
@@ -136,7 +139,9 @@ augroup END
 " Autocomplete {{{
 " ----------------
 set completeopt=menu,menuone    " Always show menu, even for one item
-set completeopt+=noselect,noinsert
+if $VIMCONF == 'all'
+  set completeopt+=noselect,noinsert
+endif
 
 if exists('+completepopup')
 	set completeopt+=popup
@@ -173,8 +178,8 @@ endif
 
 if has('nvim-0.4')
 	set signcolumn=yes:1
-else
-	set signcolumn=yes           " Always show signs column
+elseif $VIMCONF == 'all'
+	set signcolumn=yes
 endif
 
 if has('conceal') && v:version >= 703

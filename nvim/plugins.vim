@@ -25,7 +25,7 @@ endif
 "----------- Navigation
 Plug 'ton/vim-bufsurf' " enables surfing through buffers based on viewing history per window
 Plug 't9md/vim-choosewin' " easy pane switching
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " needed by fzf.vim
+"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " needed by fzf.vim
 Plug 'junegunn/fzf.vim' " integrate fzf with vim : provides Rg for search, Buffers, Files, GFiles (open files based on git), Maps... 
 if has('nvim')
   " --- defx
@@ -58,8 +58,10 @@ Plug 'editorconfig/editorconfig-vim' " EditorConfig support (project based code 
 Plug 'tpope/vim-fugitive' " Git integration
 Plug 'tomtom/tcomment_vim' " Comments
 Plug 'godlygeek/tabular' " :Tabularize /<delimiter> (must be before vim-markdown)
-Plug 'ludovicchabant/vim-gutentags' " Autogenerate tags
-Plug 'liuchengxu/vista.vim' " Navigate tags
+if $VIMCONF == 'all'
+  Plug 'ludovicchabant/vim-gutentags' " Autogenerate tags
+  Plug 'liuchengxu/vista.vim' " Navigate tags
+endif
 
 " Polyglot : syntax highlighting, indentation for a wide collection of languages
 " provides, among others plugins :
