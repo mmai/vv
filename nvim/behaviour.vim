@@ -6,9 +6,9 @@ endif
 " ----------- MARKDOWN-------------------------
 " Disable line numbers in markdown
 autocmd FileType markdown setlocal nonumber
-if $VIMCONF == 'all'
-  autocmd FileType markdown CocCommand git.toggleGutters "XXX not sure about that
-endif
+" if $VIMCONF == 'all'
+  " autocmd FileType markdown CocCommand git.toggleGutters "XXX bad : disable definitively and all file types
+" endif
 " plasticboy/vim-markdown settings
 let g:vim_markdown_folding_level = 4
 let g:vim_markdown_folding_style_pythonic = 1
