@@ -25,7 +25,7 @@ endif
 "----------- Navigation
 Plug 'ton/vim-bufsurf' " enables surfing through buffers based on viewing history per window
 Plug 't9md/vim-choosewin' " easy pane switching
-"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " needed by fzf.vim
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " needed by fzf.vim
 Plug 'junegunn/fzf.vim' " integrate fzf with vim : provides Rg for search, Buffers, Files, GFiles (open files based on git), Maps... 
 if has('nvim')
   " --- defx
