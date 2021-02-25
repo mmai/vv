@@ -91,6 +91,7 @@ if $VIMCONF == 'all'
 endif
 
 " Markdown (see also plugins loaded by polyglot)
+Plug 'dhruvasagar/vim-table-mode' " Markdown tables auto-format (enable with <leader>tm)
 Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existent directories before writing the buffer
 Plug 'mmai/vim-markdown-wiki' " eases the navigation between files in a personnal wiki based on markdown
 if $VIMCONF == 'all'
