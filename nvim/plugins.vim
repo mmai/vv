@@ -58,8 +58,10 @@ Plug 'editorconfig/editorconfig-vim' " EditorConfig support (project based code 
 Plug 'tpope/vim-fugitive' " Git integration
 Plug 'tomtom/tcomment_vim' " Comments
 Plug 'godlygeek/tabular' " :Tabularize /<delimiter> (must be before vim-markdown)
-Plug 'ludovicchabant/vim-gutentags' " Autogenerate tags
-Plug 'liuchengxu/vista.vim' " Navigate tags
+if $VIMCONF == 'all'
+  Plug 'ludovicchabant/vim-gutentags' " Autogenerate tags
+  Plug 'liuchengxu/vista.vim' " Navigate tags
+endif
 
 " Polyglot : syntax highlighting, indentation for a wide collection of languages
 " provides, among others plugins :

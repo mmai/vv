@@ -222,7 +222,7 @@ endif
 " ------ NERDTree config (cf. https://github.com/ryanoasis/vim-devicons/issues/248#issuecomment-447057991)
 let NERDTreeChDirMode=2 " change current directory when setting new root directory
 let g:WebDevIconsNerdTreeBeforeGlyphPadding = ""
-let g:WebDevIconsUnicodeDecorateFolderNodes = v:true
+" let g:WebDevIconsUnicodeDecorateFolderNodes = v:true " variable non définie v:true
 " Disable arrow icons at the left side of folders for NERDTree.
 let g:NERDTreeDirArrowExpandable = "\u00a0"
 let g:NERDTreeDirArrowCollapsible = "\u00a0"

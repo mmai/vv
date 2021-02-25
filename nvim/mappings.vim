@@ -47,14 +47,16 @@ nmap <C-p> :Files<cr>
 nmap <Leader>g :Commits<cr>
 
 " ------- FloatTerm-----------
-nnoremap   <silent>   <F9>    :FloatermNew --height=0.4 --width=0.98 --wintype=floating --position=bottom --autoclose=2 --title=
-tnoremap   <silent>   <F9>    <C-\><C-n>:FloatermNew --height=0.4 --width=0.98 --wintype=floating --position=bottom --autoclose=2 --title=
-nnoremap   <silent>   <F8>    :FloatermPrev<CR>
-tnoremap   <silent>   <F8>    <C-\><C-n>:FloatermPrev<CR>
-nnoremap   <silent>   <F10>    :FloatermNext<CR>
-tnoremap   <silent>   <F10>    <C-\><C-n>:FloatermNext<CR>
-nnoremap   <silent>   <F12>   :FloatermToggle<CR>
-tnoremap   <silent>   <F12>   <C-\><C-n>:FloatermToggle<CR>
+if $VIMCONF == 'all'
+  nnoremap   <silent>   <F9>    :FloatermNew --height=0.4 --width=0.98 --wintype=floating --position=bottom --autoclose=2 --title=
+  tnoremap   <silent>   <F9>    <C-\><C-n>:FloatermNew --height=0.4 --width=0.98 --wintype=floating --position=bottom --autoclose=2 --title=
+  nnoremap   <silent>   <F8>    :FloatermPrev<CR>
+  tnoremap   <silent>   <F8>    <C-\><C-n>:FloatermPrev<CR>
+  nnoremap   <silent>   <F10>    :FloatermNext<CR>
+  tnoremap   <silent>   <F10>    <C-\><C-n>:FloatermNext<CR>
+  nnoremap   <silent>   <F12>   :FloatermToggle<CR>
+  tnoremap   <silent>   <F12>   <C-\><C-n>:FloatermToggle<CR>
+endif
 
 " ------ UI ------------
 " Open sidebar file browser
