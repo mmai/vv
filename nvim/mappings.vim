@@ -18,7 +18,12 @@ nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 cmap W!! w !sudo tee % >/dev/null
 
 "delete buffer
-nnoremap <C-x> :<C-u>bd<CR>
+if $VIMCONF == 'all'
+ "uses vim-buffet (keeps the window open)
+  nnoremap <C-x> :Bw<CR>
+else
+  nnoremap <C-x> :<C-u>bd<CR>
+endif
 
 " choosewin
 nnoremap ù :ChooseWin<CR>

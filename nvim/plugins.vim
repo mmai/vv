@@ -100,7 +100,7 @@ if $VIMCONF == 'all'
   Plug 'mmai/vim-markdownizer' " Organizer based on markdown 
   Plug 'junegunn/goyo.vim' " writeroom like
   Plug 'junegunn/limelight.vim' " to be use with Goyo: dim surrounding paragraphs
-  Plug 'reedes/vim-pencil' "vim for writers (TooglePencil) : line wrap, undo/redo by sentences, hide markdown formating chars..
+  " Plug 'reedes/vim-pencil' "vim for writers (TooglePencil) : line wrap, undo/redo by sentences, hide markdown formating chars.. => TODO comment désactiver le line wrap par config ?
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  } " can preview Plantuml diagrams (not livedown) :MarkdownPreview / :MarkdownPreviewStop
 endif
 endif " vimdebug

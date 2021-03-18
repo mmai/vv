@@ -60,8 +60,8 @@ nnoremap <silent> <Leader>cs  :<C-u>CocList -I symbols<cr>
 " Resume latest coc list
 nnoremap <silent> <Leader>'  :<C-u>CocListResume<CR>
 " Use `[e` and `]e` for navigate diagnostics
-nmap <silent> ]e <Plug>(coc-diagnostic-prev)
-nmap <silent> [e <Plug>(coc-diagnostic-next)
+nmap <silent> )e <Plug>(coc-diagnostic-prev-error)
+nmap <silent> (e <Plug>(coc-diagnostic-next-error)
 " Remap for rename current word
 nmap <Leader>cr <Plug>(coc-rename)
 " Remap for format selected region
