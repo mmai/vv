@@ -1,6 +1,6 @@
 # VV : a vim / neovim config
 
-This config comes with two versions : 
+This config comes in two versions : 
 - a light one with no dependencies on external tools and no heavy ide plugins that you can use on servers, etc.
 - a more complete one, with coding assistance (coc).
 
