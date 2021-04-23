@@ -17,6 +17,8 @@ if has('vim_starting')
 	scriptencoding utf-8
 endif
 
+" prevents from entering in ex mode by mistake
+nnoremap Q <nop>
 
 " Sync the last copy register with the system clipboard 
 set clipboard^=unnamed,unnamedplus
