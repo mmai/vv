@@ -53,6 +53,13 @@ Plug 'maxbrunsfeld/vim-yankstack' " Enable to paste previous yanks : <alt>p / <a
 " Tmux
 Plug 'christoomey/vim-tmux-navigator' " Allow pane movement to jump out of vim into tmux
 
+if $VIMCONF == 'all'
+  " web browser integration
+  if has('nvim')
+    Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+  endif
+endif
+
 " -----------  Coding
 Plug 'editorconfig/editorconfig-vim' " EditorConfig support (project based code style) 
 Plug 'tpope/vim-fugitive' " Git integration
@@ -84,6 +91,9 @@ if $VIMCONF == 'all'
 
   Plug 'alvan/vim-php-manual', {'for': 'php'} " Search for word under cursor
   
+  Plug 'tobyS/vmustache' " required by https://github.com/Rican7/php-doc-modded
+  Plug 'Rican7/php-doc-modded' " generate functions php documentation - double emploi avec coc-phpls si intelephense 'premium' a été activé
+
   " Typescript / Js (see also plugins loaded by polyglot)
   Plug 'gavocanov/vim-js-indent' "works well whith yajs.vim
 
