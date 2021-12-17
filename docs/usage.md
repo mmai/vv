@@ -28,6 +28,10 @@ Both use j to go up directories, k to open directory or file
 - Go to implementation : <leader>`ci`
 - Show references : `gr`
 
+- go to next error (coc-diagnostic) : `(e`
+- go to previous error (coc-diagnostic) : `)e`
+- see others coc mappings in coc-config.vim
+
 ## Search
 
 - global search `:Rg thingtosearch`
@@ -62,5 +66,12 @@ This work with Coc completion. Make sure Coc is loaded : `:CocRestart`
 
 ### coc keeps installing the same extensions at vim startup
 
-Go to the coc extensions directory ( usually `.config/coc/extensions` on linux ) and list the content of `node_moudles`: the extensions that keeps being installed are probably listed as a plain empty file instead of a directory : remove these files and restart vim. 
+Go to the coc extensions directory ( usually `.config/coc/extensions` on linux ) and list the content of `node_modules`: the extensions that keeps being installed are probably listed as a plain empty file instead of a directory : remove these files and restart vim. 
 
+### Debug coc modules
+
+```
+CocCommand workspace.showOutput yaml
+```
+
+See also readme on the module project (ex: https://github.com/neoclide/coc-yaml)
