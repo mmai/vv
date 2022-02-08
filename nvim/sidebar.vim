@@ -57,7 +57,7 @@ if $VIMCONF == 'all'
 	autocmd!
 
 	" Don't show line numbers on defx buffer
-	autocmd FileType defx set nonumber
+	autocmd FileType defx setlocal nonumber
 
 	" Define defx window mappings
 	autocmd FileType defx call <SID>defx_mappings()
