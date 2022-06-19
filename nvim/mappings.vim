@@ -40,6 +40,8 @@ nnoremap ,, :BufSurfBack<CR>
 nnoremap ,; :BufSurfForward<CR>
 " When cursor is on a command between backtics, execute it (ex: `tmuxp load -y myproject`)
 nnoremap gt yi`:!<C-r>"<CR>
+" When cursor is on a command between backtics, split tmux window and execute it 
+nnoremap gs yi`:!tmux split-window <C-r>"<CR>
 " Toggle checkboxes
 nnoremap <silent> <buffer> <space><space> :call behaviour#SwitchStatus()<CR>
 
