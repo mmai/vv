@@ -26,7 +26,13 @@ endif
 
 " ----------------- Debugger
 if $VIMCONF == 'all'
-  " see phpinfo for the port config
+" Installation : 
+" - cd /home/henri/softs_/
+" - git clone https://github.com/xdebug/vscode-php-debug.git
+" - cd vscode-php-debug
+" - npm install && npm run build
+"
+" see phpinfo for the port config
 lua <<EOF
 local dap = require('dap')
 dap.adapters.php = {

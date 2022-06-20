@@ -88,7 +88,7 @@ if $VIMCONF == 'all'
   Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense engine, full LSP support as VSCode
   Plug 'honza/vim-snippets' " snippets for many languages, used by coc-snippets extension
   Plug 'pechorin/any-jump.vim' " <leader>j open floating window with definition and usages
-  Plug 'mfussenegger/nvim-dap' " XXX needs neovim >= 0.6 Debug Adapter Protocol. See coding.vim for languages adapters configs
+  Plug 'mfussenegger/nvim-dap' " (needs neovim >= 0.6) Debug Adapter Protocol. See coding.vim for languages adapters installs & configs
   Plug 'rcarriga/nvim-dap-ui' " UI for nvim-dap
 
   Plug 'alvan/vim-php-manual', {'for': 'php'} " Search for word under cursor
