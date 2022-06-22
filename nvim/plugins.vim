@@ -90,6 +90,8 @@ if $VIMCONF == 'all'
   Plug 'pechorin/any-jump.vim' " <leader>j open floating window with definition and usages
   Plug 'mfussenegger/nvim-dap' " (needs neovim >= 0.6) Debug Adapter Protocol. See coding.vim for languages adapters installs & configs
   Plug 'rcarriga/nvim-dap-ui' " UI for nvim-dap
+  " Plug 'theHamsta/nvim-dap-virtual-text' " add infos during dap debugging sessions
+  " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " needed by dap-virtual-text XXX unkown command TSUpdate error
 
   Plug 'alvan/vim-php-manual', {'for': 'php'} " Search for word under cursor
 

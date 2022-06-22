@@ -50,8 +50,8 @@ dap.configurations.php = {
   }
  }
 
-vim.fn.sign_define('DapBreakpoint', {text='🟥', texthl='', linehl='', numhl=''})
-vim.fn.sign_define('DapStopped', {text='⭐️', texthl='', linehl='', numhl=''})
+vim.fn.sign_define('DapBreakpoint', {text='⌲', texthl='', linehl='', numhl=''})
+vim.fn.sign_define('DapStopped', {text='🟥', texthl='', linehl='', numhl=''})
 EOF
   " see https://github.com/David-Kunz/vim/blob/master/_init.vim & https://www.youtube.com/watch?v=SIYt1dopfTc
   nnoremap <leader>dh :lua require'dap'.toggle_breakpoint()<CR>
