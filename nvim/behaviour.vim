@@ -3,6 +3,10 @@ if $VIMCONF == 'all'
   let g:lf_replace_netrw = 1 " open lf when vim open a directory
 endif
 
+" ----------- Startify
+let g:startify_change_to_dir = 0
+let g:startify_change_to_vcs_root = 1
+
 " ----------- MARKDOWN-------------------------
 " Disable line numbers in markdown
 autocmd FileType markdown setlocal nonumber

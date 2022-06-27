@@ -6,6 +6,15 @@
 - colors in gutter
 - php symfony : imports ?
 
+plugins à tester :
+- https://github.com/liuchengxu/vim-which-key
+- https://github.com/nvim-neorg/neorg
+- https://github.com/kyazdani42/nvim-tree.lua
+- https://github.com/AstroNvim/AstroNvim
+- https://github.com/nvim-treesitter/nvim-treesitter
+- https://github.com/nvim-telescope/telescope.nvim
+- https://github.com/NvChad/NvChad
+
 résoudre erreurs sur serveur ratpdev (vim 7): 
 ```
 Erreur détectée en traitant /home/web_portail2/vv/nvim/base.vim :
