@@ -1,3 +1,5 @@
+This repo is archived. I now use a neovim only lua config (https://github.com/mmai/dotfiles).
+
 # VV : a vim / neovim config
 
 This config comes in two versions : 
